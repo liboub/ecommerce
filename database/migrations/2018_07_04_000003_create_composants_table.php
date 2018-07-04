@@ -29,7 +29,7 @@ class CreateComposantsTable extends Migration
             $table->text('modele')->nullable();
             $table->mediumText('description')->nullable();
             $table->text('taille')->nullable();
-            $table->text('categorie')->nullable();
+
             $table->text('image')->nullable();
             $table->double('poids')->nullable();
             $table->integer('stock')->nullable();
