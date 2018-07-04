@@ -24,12 +24,11 @@ class CreateComposantsHasCommandeTable extends Migration
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('composants_id');
-            $table->integer('composants_commande_user_id');
-            $table->integer('commande_user_id');
+            $table->integer('commande_id');
 
-            $table->index(["composants_id", "composants_commande_user_id"], 'fk_composants_has_commande_composants1_idx');
+            $table->index(["composants_id"], 'fk_composants_has_commande_composants1_idx');
 
-            $table->index(["commande_user_id"], 'fk_composants_has_commande_commande1_idx');
+            $table->index(["commande_id"], 'fk_composants_has_commande_commande1_idx');
 
 
             $table->foreign('composants_id', 'fk_composants_has_commande_composants1_idx')
@@ -37,7 +36,7 @@ class CreateComposantsHasCommandeTable extends Migration
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
-            $table->foreign('commande_user_id', 'fk_composants_has_commande_commande1_idx')
+            $table->foreign('commande_id', 'fk_composants_has_commande_commande1_idx')
                 ->references('user_id')->on('commande')
                 ->onDelete('no action')
                 ->onUpdate('no action');

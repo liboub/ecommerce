@@ -33,7 +33,6 @@ class CreateComposantsTable extends Migration
             $table->text('image')->nullable();
             $table->double('poids')->nullable();
             $table->integer('stock')->nullable();
-            $table->integer('commande_user_id');
             $table->double('consommation')->nullable();
             $table->text('frequence')->nullable();
             $table->text('capacite')->nullable();
@@ -45,6 +44,15 @@ class CreateComposantsTable extends Migration
             $table->integer('proc_nb_coeur')->nullable();
             $table->integer('proc_nb_thread')->nullable();
             $table->double('alim_puissance')->nullable();
+            $table->integer('categorie_id');
+
+            $table->index(["categorie_id"], 'fk_composants_categorie1_idx');
+
+
+            $table->foreign('categorie_id', 'fk_composants_categorie1_idx')
+                ->references('id')->on('categorie')
+                ->onDelete('no action')
+                ->onUpdate('no action');
         });
     }
 
