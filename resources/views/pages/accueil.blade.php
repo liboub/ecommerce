@@ -69,7 +69,7 @@
         </div>
     </div>
     <!-- Start Slider Area -->
-@include('sections.acceuilProduits')
+@include('sections.accueilProduits')
 </div>
 <!-- Body main wrapper end -->
 <!-- QUICKVIEW PRODUCT -->
