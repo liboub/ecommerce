@@ -24,4 +24,8 @@ Route::get('/acceuil', function () {
     return view('pages.acceuil');
 });
 
+Route::get('/shop', function () {
+    return view('pages.shop');
+});
+
 Route::get('/shop/{n}', 'shopController@viewproduct');
