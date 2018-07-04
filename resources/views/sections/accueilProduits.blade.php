@@ -62,6 +62,8 @@
                                 </div>
                             </div>
                             <!-- End Single Product -->
+
+                            @foreach($compsant as $single)
                             <!-- Start Single Product -->
                             <div class="single__pro cat--3">
                                 <div class="product">
@@ -86,6 +88,8 @@
                                 </div>
                             </div>
                             <!-- End Single Product -->
+                            @endforeach
+
                             <!-- Start Single Product -->
                             <div class="single__pro cat--1 cat--4">
                                 <div class="product">
