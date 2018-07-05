@@ -1,19 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: libou
- * Date: 04/07/18
- * Time: 11:19
- */
-?>
-
-
-<footer class="htc__foooter__area bg__cat--2 footer--4">
-    <div class="container-fluid">
+<footer class="htc__foooter__area" style="background: rgba(0, 0, 0, 0) url(images/bg/1.jpg) no-repeat scroll center center / cover ;">
+    <div class="container">
         <div class="row">
             <div class="footer__container clearfix">
                 <!-- Start Single Footer Widget -->
-                <div class="col-md-4 col-lg-3 col-sm-6">
+                <div class="col-md-3 col-lg-3 col-sm-6">
                     <div class="ft__widget">
                         <div class="ft__logo">
                             <a href="index.html">
@@ -27,7 +17,7 @@
                 </div>
                 <!-- End Single Footer Widget -->
                 <!-- Start Single Footer Widget -->
-                <div class="col-md-4 col-lg-3 col-lg-offset-1 col-sm-6 smb-30 xmt-30">
+                <div class="col-md-3 col-lg-3 col-lg-offset-1 col-sm-6 smb-30 xmt-30">
                     <div class="ft__widget">
                         <h2 class="ft__title">Newsletter</h2>
                         <div class="newsletter__form">
@@ -52,7 +42,7 @@
                 </div>
                 <!-- End Single Footer Widget -->
                 <!-- Start Single Footer Widget -->
-                <div class="hidden-md col-lg-3 col-sm-6 smt-30 xmt-30">
+                <div class="col-md-3 col-lg-3 col-sm-6 smt-30 xmt-30">
                     <div class="ft__widget contact__us">
                         <h2 class="ft__title">Contact Us</h2>
                         <div class="footer__inner">
@@ -62,8 +52,8 @@
                 </div>
                 <!-- End Single Footer Widget -->
                 <!-- Start Single Footer Widget -->
-                <div class="col-md-4 col-lg-2 col-sm-6 smt-30 xmt-30">
-                    <div class="ft__widget follow-us">
+                <div class="col-md-3 col-lg-2 col-sm-6 smt-30 xmt-30">
+                    <div class="ft__widget">
                         <h2 class="ft__title">Follow Us</h2>
                         <ul class="social__icon">
                             <li><a href="https://twitter.com/devitemsllc" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
