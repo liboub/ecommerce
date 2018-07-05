@@ -20,8 +20,8 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/acceuil', function () {
-    return view('pages.acceuil');
+Route::get('/accueil', function () {
+    return view('pages.accueil');
 });
 
 Route::get('/shop', function () {
@@ -29,3 +29,7 @@ Route::get('/shop', function () {
 });
 
 Route::get('/shop/{n}', 'shopController@viewproduct');
+
+Route::get('/cart', function () {
+    return view('pages.cart');
+});
