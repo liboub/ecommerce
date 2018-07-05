@@ -20,15 +20,12 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/accueil', function () {
-    return view('pages.accueil');
-});
 
 Route::get('/shop', function () {
     return view('pages.shop');
 });
 
-Route::get('/shop/{n}', 'shopController@viewproduct');
+Route::get('/accueil', 'AccueilController@view');
 
 Route::get('/cart', function () {
     return view('pages.cart');
