@@ -33,3 +33,11 @@ Route::get('/shop/{n}', 'shopController@viewproduct');
 Route::get('/cart', function () {
     return view('pages.cart');
 });
+
+Route::get('/product', function () {
+    return view('pages.product');
+});
+
+Route::get('/checkout', function () {
+    return view('pages.checkout');
+});

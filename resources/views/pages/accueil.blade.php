@@ -53,9 +53,6 @@
 @include('sections.accueilProduits')
 </div>
 <!-- Body main wrapper end -->
-<!-- QUICKVIEW PRODUCT -->
-@include('includes.quickView')
-<!-- END QUICKVIEW PRODUCT -->
 @include('includes.jsInclude')
 </body>
 
