@@ -58,13 +58,13 @@
                                         </div>
                                     </div>
                                     <div class="product__details">
-                                        <span class="popular__pro__prize">{{$single->prix}}</span>
+                                        <span class="popular__pro__prize">{{$single->prix}} € <br></span>
                                     </div>
                                     <h2><a href="/composant/{n}">{{$single->modele}}</a></h2>
                                 </div>
                             </div>
                             <!-- End Single Product -->
-                            @endforeachgi
+                            @endforeach
                         </div>
                     </div>
                 </div>
