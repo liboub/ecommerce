@@ -51,7 +51,7 @@
                         <div class="product__big__images ">
                             <div class="portfolio-full-image tab-content">
                                 <div role="tabpanel" class="tab-pane fade in active" id="img-tab-1">
-                                    <img src="images/product-details/big-img/1.jpg" alt="full-image">
+                                    <img src="{!! asset('storage/'.$composant->image) !!}" alt="full-image">
                                 </div>
                             </div>
                         </div>
@@ -60,14 +60,16 @@
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 smt-30 xmt-30">
                     <div class="htc__product__details__inner">
                         <div class="pro__detl__title">
-                            <h2>Black Clock</h2>
+                            <h2>{!! $composant->modele !!}</h2>
                         </div>
                         <div class="pro__details">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod temf incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostr exercitation ullamco laboris nisi ut aliquip ex ea. </p>
+                            <p>{{$composant->description}}</p>
                         </div>
                         <ul class="pro__dtl__prize">
-                            <li>$10.00</li>
+                            <li>{{$composant->prix}} €</li>
                         </ul>
+
+                        
 
                         <ul class="pro__dtl__btn">
                             <li class="buy__now__btn"><a href="#">buy now</a></li>
@@ -98,26 +100,26 @@
                             <div class="product__description__wrap">
                                 <div class="product__desc">
                                     <h2 class="title__6">Details</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis noexercit ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.</p>
+                                    <p>{{$composant->description}}</p>
                                 </div>
                                 <div class="pro__feature">
                                     <h2 class="title__6">Caractéristiques</h2>
                                     <ul class="feature__list">
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Marque : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Modèle : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Taille : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Poids : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Consommation : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Frequence : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Capacité : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Socket : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Atx : </b>Oui</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>microATX : </b>Oui</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Type de stockage : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Type de RAM : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Nombre de coeurs : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Nombre de threads : </b>Intel</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i><b>Puissance : </b>Intel</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Marque : </b>{{$composant->marque}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Modèle : </b>{{$composant->modele}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Taille : </b>{{$composant->taille}} mm</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Poids : </b>{{$composant->poids}} g</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Consommation : </b>{{$composant->consommation}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Frequence : </b>{{$composant->frequence}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Capacité : </b>{{$composant->capacite}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Socket : </b>{{$composant->socket}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Atx : </b>{{$composant->atx}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>microATX : </b>{{$composant->microAtx}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Type de stockage : </b>{{$composant->type_stockage}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Type de RAM : </b>{{$composant->type_ram}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Nombre de coeurs : </b>{{$composant->proc_nb_coeur}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Nombre de threads : </b>{{$composant->proc_nb_thread}}</a></li>
+                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Puissance : </b>{{$composant->alim_puissance}}</a></li>
 
                                     </ul>
                                 </div>

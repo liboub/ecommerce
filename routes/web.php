@@ -24,13 +24,13 @@ Route::get('/shop', 'ShopController@view');
 
 Route::get('/accueil', 'AccueilController@view');
 
+Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
+
+
 Route::get('/cart', function () {
     return view('pages.cart');
 });
 
-Route::get('/product', function () {
-    return view('pages.product');
-});
 
 Route::get('/checkout', function () {
     return view('pages.checkout');
