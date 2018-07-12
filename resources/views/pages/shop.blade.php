@@ -11,44 +11,70 @@
 
 
 <body>
+
 <!-- Body main wrapper start -->
 <div class="wrapper fixed__footer">
     <!-- Start Header Style -->
-    @include('elements.navbar',['search'=>true])
+    @include('elements.navbar')
     <!-- End Header Style -->
     <div class="body__overlay"></div>
     <!-- Start Offset Wrapper -->
     <div class="offset__wrapper">
-        <!-- Start Search Popap -->
-        <div class="search__area">
-            <div class="container" >
-                <div class="row" >
-                    <div class="col-md-12" >
-                        <div class="search__inner">
-                            <form action="#" method="get">
-                                <input placeholder="Search here... " type="text">
-                                <button type="submit"></button>
-                            </form>
-                            <div class="search__close__btn">
-                                <span class="search__close__btn_icon"><i class="zmdi zmdi-close"></i></span>
-                            </div>
+
+        <!-- Start Cart Panel -->
+        <div class="shopping__cart">
+            <div class="shopping__cart__inner">
+                <div class="offsetmenu__close__btn">
+                    <a href="#"><i class="zmdi zmdi-close"></i></a>
+                </div>
+                <div class="shp__cart__wrap">
+                    <div class="shp__single__product">
+                        <div class="shp__pro__thumb">
+                            <a href="#">
+                                <img src="images/product/sm-img/1.jpg" alt="product images">
+                            </a>
+                        </div>
+                        <div class="shp__pro__details">
+                            <h2><a href="product-details.html">BO&Play Wireless Speaker</a></h2>
+                            <span class="quantity">QTY: 1</span>
+                            <span class="shp__price">$105.00</span>
+                        </div>
+                        <div class="remove__btn">
+                            <a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
+                        </div>
+                    </div>
+                    <div class="shp__single__product">
+                        <div class="shp__pro__thumb">
+                            <a href="#">
+                                <img src="images/product/sm-img/2.jpg" alt="product images">
+                            </a>
+                        </div>
+                        <div class="shp__pro__details">
+                            <h2><a href="product-details.html">Brone Candle</a></h2>
+                            <span class="quantity">QTY: 1</span>
+                            <span class="shp__price">$25.00</span>
+                        </div>
+                        <div class="remove__btn">
+                            <a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
                         </div>
                     </div>
                 </div>
+                <ul class="shoping__total">
+                    <li class="subtotal">Subtotal:</li>
+                    <li class="total__price">$130.00</li>
+                </ul>
+                <ul class="shopping__btn">
+                    <li><a href="cart.html">View Cart</a></li>
+                    <li class="shp__checkout"><a href="checkout.html">Checkout</a></li>
+                </ul>
             </div>
         </div>
-        <!-- End Search Popap -->
+        <!-- End Cart Panel -->
     </div>
     <!-- End Offset Wrapper -->
     <!-- Start Bradcaump area -->
     <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/2.jpg) no-repeat scroll center center / cover ;">
         <div class="ht__bradcaump__wrap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- End Bradcaump area -->
@@ -62,10 +88,9 @@
                         <div class="filter__menu__container">
                             <div class="product__menu">
                                 <button data-filter="*"  class="is-checked">All</button>
-                                <button data-filter=".cat--1">Furnitures</button>
-                                <button data-filter=".cat--2">Bags</button>
-                                <button data-filter=".cat--3">Decoration</button>
-                                <button data-filter=".cat--4">Accessories</button>
+                                @foreach($categories as $categorie)
+                                    <button data-filter=".{{$categorie->slug}}">{{$categorie->name}}</button>
+                                @endforeach
                             </div>
                             <div class="filter__box">
                                 <a class="filter__menu" href="#">filter</a>
@@ -74,98 +99,63 @@
                     </div>
                 </div>
                 <!-- Start Filter Menu -->
-                @include('sections.shopFilter')
+                <div class="filter__wrap">
+                    <div class="filter__cart">
+                        <div class="filter__cart__inner">
+                            <div class="filter__menu__close__btn">
+                                <a href="#"><i class="zmdi zmdi-close"></i></a>
+                            </div>
+                            <div class="filter__content">
+                                <!-- Start Single Content -->
+                                <div class="fiter__content__inner">
+                                    <div class="single__filter">
+                                        <h2>Price</h2>
+                                        <ul class="filter__list">
+                                            <li><a href="#">$0.00 - $50.00</a></li>
+                                            <li><a href="#">$50.00 - $100.00</a></li>
+                                            <li><a href="#">$100.00 - $150.00</a></li>
+                                            <li><a href="#">$150.00 - $200.00</a></li>
+                                            <li><a href="#">$300.00 - $500.00</a></li>
+                                            <li><a href="#">$500.00 - $700.00</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- End Single Content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- End Filter Menu -->
                 <!-- End Product MEnu -->
+
                 <div class="row">
                     <div class="product__list">
-                        <!-- Start Single Product -->
-                        <div class="col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12">
-                            <div class="product foo">
-                                <div class="product__inner">
-                                    <div class="pro__thumb">
-                                        <a href="#">
-                                            <img src="images/product/1.png" alt="product images">
-                                        </a>
-                                    </div>
-                                    <div class="product__hover__info">
-                                        <ul class="product__action">
-                                            <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                            <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="add__to__wishlist">
-                                        <a data-toggle="tooltip" title="Add To Wishlist" class="add-to-cart" href="wishlist.html"><span class="ti-heart"></span></a>
-                                    </div>
-                                </div>
-                                <div class="product__details">
-                                    <h2><a href="product-details.html">Simple Black Clock</a></h2>
-                                    <ul class="product__price">
-                                        <li class="old__price">$16.00</li>
-                                        <li class="new__price">$10.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Product -->
-                        <!-- Start Single Product -->
-                        <div class="col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12">
-                            <div class="product foo">
-                                <div class="product__inner">
-                                    <div class="pro__thumb">
-                                        <a href="#">
-                                            <img src="images/product/2.png" alt="product images">
-                                        </a>
-                                    </div>
-                                    <div class="product__hover__info">
-                                        <ul class="product__action">
-                                            <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                            <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="add__to__wishlist">
-                                        <a data-toggle="tooltip" title="Add To Wishlist" class="add-to-cart" href="wishlist.html"><span class="ti-heart"></span></a>
+                        @foreach($composants as $composant)
+                            <!-- Start Single Product -->
+                                <div class="col-md-3 single__pro col-lg-3 {{$composant->slug}} col-sm-4 col-xs-12">
+                                    <div class="product foo">
+                                        <div class="product__inner">
+                                            <div class="pro__thumb">
+                                                <a href="#">
+                                                    <img src="{!! asset('storage/'.$composant->image) !!}" alt="product images">
+                                                </a>
+                                            </div>
+                                            <div class="product__hover__info">
+                                                <ul class="product__action">
+                                                    <li><a title="Add To Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product__details">
+                                            <h2><a href="product-details.html">{{$composant->modele}}</a></h2>
+                                            <ul class="product__price">
+                                                <li class="new__price">{{$composant->prix}} €</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="product__details">
-                                    <h2><a href="product-details.html">BO&Play Wireless Speaker</a></h2>
-                                    <ul class="product__price">
-                                        <li class="old__price">$16.00</li>
-                                        <li class="new__price">$10.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Product -->
-                        <!-- Start Single Product -->
-                        <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--2">
-                            <div class="product foo">
-                                <div class="product__inner">
-                                    <div class="pro__thumb">
-                                        <a href="#">
-                                            <img src="images/product/3.png" alt="product images">
-                                        </a>
-                                    </div>
-                                    <div class="product__hover__info">
-                                        <ul class="product__action">
-                                            <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                            <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="add__to__wishlist">
-                                        <a data-toggle="tooltip" title="Add To Wishlist" class="add-to-cart" href="wishlist.html"><span class="ti-heart"></span></a>
-                                    </div>
-                                </div>
-                                <div class="product__details">
-                                    <h2><a href="product-details.html">Brone Candle</a></h2>
-                                    <ul class="product__price">
-                                        <li class="old__price">$16.00</li>
-                                        <li class="new__price">$10.00</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Product -->
+                            <!-- End Single Product -->
+                        @endforeach
                     </div>
                 </div>
                 <!-- Start Load More BTn -->
@@ -186,10 +176,8 @@
     <!-- End Footer Area -->
 </div>
 <!-- Body main wrapper end -->
-<!-- QUICKVIEW PRODUCT -->
-@include('includes.quickView')
-<!-- END QUICKVIEW PRODUCT -->
 <!-- Placed js at the end of the document so the pages load faster -->
+
 @include('includes.jsInclude')
 
 </body>

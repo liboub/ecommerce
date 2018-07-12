@@ -14,7 +14,7 @@
                 <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
                     <div class="logo">
                         <a href="/accueil">
-                            <img src="images/logo/uniqlo.png" alt="logo">
+                            <img src="{{ asset('images/logo/uniqlo.png') }}" alt="logo">
                         </a>
                     </div>
                 </div>
