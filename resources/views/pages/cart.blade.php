@@ -38,17 +38,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($cart as $single)
                                 <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="images/product/4.png" alt="product img" /></a></td>
-                                    <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                    <td class="product-price"><span class="amount">£165.00</span></td>
-                                    <td class="product-quantity"><input type="number" value="1" /></td>
+                                        <td class="product-thumbnail"><a href="#"><img src="{{ asset('storage/'.$single->options['image']) }}" alt="product img" /></a></td>
+                                    <td class="product-name"><a href="#">{{$single->name}}</a></td>
+                                    <td class="product-price"><span class="amount">{{$single->price}}</span></td>
+                                    <td class="product-quantity"><input type="number" value="{{$single->qty}}" /></td>
                                     <td class="product-subtotal">£165.00</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
+                                    <td class="product-remove"><a href="/cartRemove/{{$single->rowId}}">X</a></td>
                                 </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
+                        {{dd($cart)}}
+                        {{dd($cart['91702397cc8331629b4057d66eb53f8f']->options['image'])}}
                         <div class="row">
                             <div class="col-md-8 col-sm-7 col-xs-12">
                                 <div class="buttons-cart">

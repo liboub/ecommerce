@@ -136,7 +136,7 @@
                                     <div class="product foo">
                                         <div class="product__inner">
                                             <div class="pro__thumb">
-                                                <a href="#">
+                                                <a href="{{ route('shop.show',$composant->id) }}">
                                                     <img src="{!! asset('storage/'.$composant->image) !!}" alt="product images">
                                                 </a>
                                             </div>

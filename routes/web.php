@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/cart', 'CartController@index');
+Route::post('/cartStore', 'CartController@store')->name('cartStore');
+Route::get('/cartRemove/{n}', 'CartController@destroy')->name('cartDelete');
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -23,13 +24,10 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/shop', 'ShopController@view');
 
 Route::get('/accueil', 'AccueilController@view');
+Route::get('/', 'AccueilController@view');
+
 
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
-
-
-Route::get('/cart', function () {
-    return view('pages.cart');
-});
 
 
 Route::get('/checkout', function () {
