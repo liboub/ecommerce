@@ -15,14 +15,14 @@
                     <div class="col-md-12">
                         <div class="popular__product__container product__list clearfix">
 
-                            @foreach($composants as $single)
+                            @foreach($composants as $composant)
                             <!-- Start Single Product -->
                             <div class="single__pro">
                                 <div class="product">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
-                                            <a href="#">
-                                                <img src="{!! asset('storage/'.$single->image) !!}" alt="product images">
+                                            <a href="{{ route('shop.show',$composant->id) }}">
+                                                <img src="{!! asset('storage/'.$composant->image) !!}" alt="product images">
                                             </a>
                                         </div>
                                         <div class="popular__product__hover__info">
@@ -31,9 +31,9 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <h3><a href="/composant/{n}">{{$single->modele}}</a></h3>
+                                    <h3><a href="{{ route('shop.show',$composant->id) }}">{{$composant->modele}}</a></h3>
                                     <ul class="product__price">
-                                        <li class="new__price">{{$single->prix}} €</li>
+                                        <li class="new__price">{{$composant->prix}} €</li>
                                     </ul>
                                 </div>
                             </div>
