@@ -147,7 +147,7 @@
                                             </div>
                                         </div>
                                         <div class="product__details">
-                                            <h2><a href="product-details.html">{{$composant->modele}}</a></h2>
+                                            <h2><a href="{{ route('shop.show',$composant->id) }}">{{$composant->modele}}</a></h2>
                                             <ul class="product__price">
                                                 <li class="new__price">{{$composant->prix}} €</li>
                                             </ul>

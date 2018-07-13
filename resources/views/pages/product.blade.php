@@ -118,18 +118,38 @@
                                         <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Modèle : </b>{{$composant->modele}}</a></li>
                                         <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Taille : </b>{{$composant->taille}} mm</a></li>
                                         <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Poids : </b>{{$composant->poids}} g</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Consommation : </b>{{$composant->consommation}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Frequence : </b>{{$composant->frequence}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Capacité : </b>{{$composant->capacite}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Socket : </b>{{$composant->socket}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Atx : </b>{{$composant->atx}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>microATX : </b>{{$composant->microAtx}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Type de stockage : </b>{{$composant->type_stockage}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Type de RAM : </b>{{$composant->type_ram}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Nombre de coeurs : </b>{{$composant->proc_nb_coeur}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Nombre de threads : </b>{{$composant->proc_nb_thread}}</a></li>
-                                        <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Puissance : </b>{{$composant->alim_puissance}}</a></li>
-
+                                        @if ($composant->slug != "alimentation" and $composant->slug != "boitier" and $composant->slug != "clavier" and $composant->slug != "souris")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Consommation : </b>{{$composant->consommation}} W</a></li>
+                                        @endif
+                                        @if ($composant->slug === "processeur" or $composant->slug === "ram" or $composant->slug === "carte-graphique")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Frequence : </b>{{$composant->frequence}}</a></li>
+                                        @endif
+                                        @if ($composant->slug === "ram" or $composant->slug === "carte-graphique" or $composant->slug === "stockage")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Capacité : </b>{{$composant->capacite}}</a></li>
+                                        @endif
+                                        @if ($composant->slug === "processeur" or $composant->slug === "carte-mere")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Socket : </b>{{$composant->socket}}</a></li>
+                                        @endif
+                                        @if ($composant->slug === "boitier")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Atx : </b>{{$composant->atx}}</a></li>
+                                        @endif
+                                        @if ($composant->slug === "boitier")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>microATX : </b>{{$composant->microAtx}}</a></li>
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>microATX : </b>{{$composant->microAtx}}</a></li>
+                                        @endif
+                                        @if ($composant->slug === "stockage")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Type de stockage : </b>{{$composant->type_stockage}}</a></li>
+                                        @endif
+                                        @if ($composant->slug === "ram" or $composant->slug === "carte-mere")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Type de RAM : </b>{{$composant->type_ram}}</a></li>
+                                        @endif
+                                        @if ($composant->slug === "processeur")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Nombre de coeurs : </b>{{$composant->proc_nb_coeur}}</a></li>
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Nombre de threads : </b>{{$composant->proc_nb_thread}}</a></li>
+                                        @endif
+                                        @if ($composant->slug === "alimentation")
+                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Puissance : </b>{{$composant->alim_puissance}}</a></li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
