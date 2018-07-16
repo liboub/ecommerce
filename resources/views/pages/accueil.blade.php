@@ -20,6 +20,12 @@
     @include('elements.navbar')
     <!-- End Header Style -->
 
+    @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+
     <div class="body__overlay"></div>
     <!-- Start Offset Wrapper -->
     <div class="offset__wrapper">

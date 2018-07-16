@@ -33,8 +33,24 @@
                         @if(isset($search))
                             <li class="search search__open hidden-xs"><span class="ti-search"></span></li>
                         @endif
-                        <li><a href="login-register.html"><span class="ti-user"></span></a></li>
-                        <li><a href="/cart"><span class="ti-shopping-cart"></span></li>
+                        @guest
+                            <li><a href="{{route('register')}}">Register</a></li>
+                            <li><a href="{{route('login')}}">Login</a></li>
+                            @else
+                                <li><span class="ti-user"></span> {{ Auth::user()->name }}</li>
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                                Logout
+                                    </a>
+                                </li>
+
+                                <form id="logout-form" action="{{route('logout')}}" method="post" style="display: none;">
+                                    {{csrf_field()}}
+                                </form>
+                            @endguest
+                            <li><a href="/cart"><span class="ti-shopping-cart"></span></a></li>
                     </ul>
                 </div>
             </div>
