@@ -21,9 +21,9 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/shop', 'ShopController@view');
+Route::get('/shop', 'ShopController@view')->name('shop');
 
-Route::get('/accueil', 'AccueilController@view');
+Route::get('/accueil', 'AccueilController@view')->name('accueil');
 Route::get('/', 'AccueilController@view');
 
 
@@ -33,3 +33,7 @@ Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 Route::get('/checkout', function () {
     return view('pages.checkout');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
