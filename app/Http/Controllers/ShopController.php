@@ -44,6 +44,10 @@ class ShopController
         $composant = DB::table('composants')
             ->where('composants.id',$id)
             ->leftJoin('categories','composants.categorie_id','=','categories.id')
+            ->select('composants.id','composants.prix','composants.marque','composants.modele','composants.description','composants.taille','composants.stock','composants.poids','composants.stock',
+                'composants.consommation','composants.frequence','composants.capacite','composants.socket','composants.atx','composants.microAtx','composants.type_stockage','composants.type_ram',
+                'composants.proc_nb_coeur','composants.proc_nb_thread','composants.alim_puissance','composants.categorie_id','composants.created_at','composants.updated_at','composants.image',
+                'categories.name','categories.slug')
             ->first();
         $composant->description = strip_tags($composant->description);
         //return dd($composant);

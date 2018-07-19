@@ -142,11 +142,10 @@
                                         @if ($composant->slug === "processeur" or $composant->slug === "carte-mere")
                                             <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Socket : </b>{{$composant->socket}}</a></li>
                                         @endif
-                                        @if ($composant->slug === "boitier")
+                                        @if ($composant->slug === "boitier" or $composant->slug === "carte-mere")
                                             <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>Atx : </b>{{$composant->atx}}</a></li>
                                         @endif
-                                        @if ($composant->slug === "boitier")
-                                            <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>microATX : </b>{{$composant->microAtx}}</a></li>
+                                        @if ($composant->slug === "boitier" or $composant->slug === "carte-mere")
                                             <li><a href=""><i class="zmdi zmdi-play-circle"></i><b>microATX : </b>{{$composant->microAtx}}</a></li>
                                         @endif
                                         @if ($composant->slug === "stockage")

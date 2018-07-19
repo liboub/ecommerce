@@ -10,9 +10,6 @@
                                 <img src="images/logo/uniqlo.png" alt="footer logo">
                             </a>
                         </div>
-                        <div class="footer__details">
-                            <p>Get 10% discount with notified about the latest news and updates.</p>
-                        </div>
                     </div>
                 </div>
                 <!-- End Single Footer Widget -->
@@ -46,7 +43,7 @@
                     <div class="ft__widget contact__us">
                         <h2 class="ft__title">Contact Us</h2>
                         <div class="footer__inner">
-                            <p>319 Clematis St.<Br>Suite 100 WPB, FL 33401</p>
+                            <p>Epitech</p>
                         </div>
                     </div>
                 </div>
@@ -75,11 +72,6 @@
                             <p>© 2017 <a href="https://devitems.com" target="_blank">Devitems</a>
                                 All Right Reserved.</p>
                         </div>
-                        <ul class="footer__menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="shop.html">Product</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>

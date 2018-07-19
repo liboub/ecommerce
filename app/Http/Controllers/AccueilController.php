@@ -9,7 +9,7 @@ class AccueilController extends Controller
 {
     public function view()
     {
-     $composants = DB::table('composants')->select('id','prix','image','modele')->get();
+     $composants = DB::table('composants')->select('id','prix','image','modele')->inRandomOrder()->take(5)->get();
      return view('pages.accueil', compact('composants'));
     }
 }

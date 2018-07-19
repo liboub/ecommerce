@@ -140,11 +140,6 @@
                                                     <img src="{!! asset('storage/'.$composant->image) !!}" alt="product images">
                                                 </a>
                                             </div>
-                                            <div class="product__hover__info">
-                                                <ul class="product__action">
-                                                    <li><a title="Add To Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                                </ul>
-                                            </div>
                                         </div>
                                         <div class="product__details">
                                             <h2><a href="{{ route('shop.show',$composant->id) }}">{{$composant->modele}}</a></h2>
@@ -162,7 +157,7 @@
                 <div class="row mt--60">
                     <div class="col-md-12">
                         <div class="htc__loadmore__btn">
-                            <a href="#">load more</a>
+                            <a href="#">Voir plus</a>
                         </div>
                     </div>
                 </div>

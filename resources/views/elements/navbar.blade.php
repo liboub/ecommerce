@@ -22,27 +22,27 @@
                 <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
                     <nav class="mainmenu__nav hidden-xs hidden-sm">
                         <ul class="main__menu">
-                            <li><a href="/accueil">Home</a></li>
+                            <li><a href="/accueil">Accueil</a></li>
                             <li><a href="/shop">Shop</a></li>
                         </ul>
                     </nav>
                 </div>
                 <!-- End MAinmenu Ares -->
-                <div class="col-md-2 col-sm-4 col-xs-3">
+                <div class="col-md-3 col-sm-4 col-xs-3">
                     <ul class="menu-extra">
                         @if(isset($search))
                             <li class="search search__open hidden-xs"><span class="ti-search"></span></li>
                         @endif
                         @guest
-                            <li><a href="{{route('register')}}">Register</a></li>
-                            <li><a href="{{route('login')}}">Login</a></li>
+                            <li><a href="{{route('register')}}">S'enregistrer</a></li>
+                            <li><a href="{{route('login')}}">Se connecter</a></li>
                             @else
                                 <li><span class="ti-user"></span> {{ Auth::user()->name }}</li>
                                 <li>
                                     <a href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                                                Logout
+                                                Se déconnecter
                                     </a>
                                 </li>
 
