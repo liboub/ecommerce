@@ -11,7 +11,7 @@
         <div class="container-fluid">
                 <!-- End Product MEnu -->
                 <div class="row">
-                    <h1 class="text-center"><a>Popular products</a></h1>
+                    <h1 class="text-center"><a>Produits populaires</a></h1>
                     <div class="col-md-12">
                         <div class="popular__product__container product__list clearfix">
 
@@ -25,11 +25,6 @@
                                                 <img src="{!! asset('storage/'.$composant->image) !!}" alt="product images">
                                             </a>
                                         </div>
-                                        <div class="popular__product__hover__info">
-                                            <ul class="product__action">
-                                                <li><a title="Add To Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                     <h3><a href="{{ route('shop.show',$composant->id) }}">{{$composant->modele}}</a></h3>
                                     <ul class="product__price">
@@ -39,6 +34,11 @@
                             </div>
                             <!-- End Single Product -->
                             @endforeach
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                         </div>
                     </div>
                 </div>
