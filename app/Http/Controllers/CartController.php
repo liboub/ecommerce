@@ -42,7 +42,8 @@ class CartController extends Controller
             ->associate('App/Composants');
        // $rowId = Cart::content()->last()->rowId;
       //  Cart::store($rowId);
-        return redirect('/cart');
+        return dd(Cart::content());
+      //  return redirect('/cart');
     }
 
     /**
