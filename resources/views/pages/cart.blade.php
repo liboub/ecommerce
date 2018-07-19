@@ -48,7 +48,7 @@
                                     <td class="product-name"><a href="#">{{$single->name}}</a></td>
                                     <td class="product-price"><span class="amount">{{$single->price}}</span></td>
                                     <td class="product-quantity"><input type="number" value="{{$single->qty}}" /></td>
-                                    <td class="product-subtotal">£165.00</td>
+                                    <td class="product-subtotal">{{$single->price}}</td>
                                     <td class="product-remove"><a href="/cartRemove/{{$single->rowId}}">X</a></td>
                                 </tr>
                                 @endforeach
@@ -75,7 +75,7 @@
                                         <tbody>
                                         <tr class="cart-subtotal">
                                             <th>Subtotal</th>
-                                            <td><span class="amount">£215.00</span></td>
+                                            <td><span class="amount">{{Cart::subtotal()}}</span></td>
                                         </tr>
                                         <tr class="shipping">
                                             <th>Shipping</th>
@@ -101,13 +101,13 @@
                                         <tr class="order-total">
                                             <th>Total</th>
                                             <td>
-                                                <strong><span class="amount">£215.00</span></strong>
+                                                <strong><span class="amount">{{Cart::subtotal()}}</span></strong>
                                             </td>
                                         </tr>
                                         </tbody>
                                     </table>
                                     <div class="wc-proceed-to-checkout">
-                                        <a href="checkout.html">Proceed to Checkout</a>
+                                        <a href="/cartStore">passer au paiement</a>
                                     </div>
                                 </div>
                             </div>

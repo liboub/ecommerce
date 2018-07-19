@@ -16,6 +16,8 @@ Route::get('/cart', 'CartController@index');
 Route::post('/cartCreate', 'CartController@create')->name('cartCreate');
 Route::get('/cartRemove/{n}', 'CartController@destroy')->name('cartDelete');
 Route::post('/destroyDoublon', 'CartController@destroyDoublon')->name('destroyDoublon');
+Route::get('/cartStore', 'CartController@store');
+
 
 
 
