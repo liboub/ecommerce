@@ -154,7 +154,7 @@ class CartController extends Controller
         {
             foreach (Cart::content() as $single){
                 if ($request->input('slug') == $single->options['slug']){
-                    return redirect()->back()->with('alert', 'vous  avez deja un '.$request->input('slug').'!');
+                    return redirect()->back()->with('alert', 'Vous  avez déja un(e) '.$request->input('slug').'!');
                 }
                 else{
                     Cart::add($request->input('id'),$request->input('modele'),1,

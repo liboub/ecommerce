@@ -80,7 +80,7 @@
                                     <input  type="hidden" name="prix" value="{{$composant->prix}}">
                                     <input  type="hidden" name="image" value="{{$composant->image}}">
                                     <input  type="hidden" name="slug" value="{{$composant->slug}}">
-                                    <button type="submit" class="btn btn-danger">supprimer le {{$composant->slug}} deja present dans le panier , et ajouter ce produit</button>
+                                    <button type="submit" class="btn btn-danger">Supprimer le/la {{$composant->slug}} du panier , et ajouter ce produit</button>
                                 </form>
                             </div>
                         @endif
