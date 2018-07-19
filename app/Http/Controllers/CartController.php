@@ -15,8 +15,8 @@ class CartController extends Controller
     public function index()
     {
         $cart = Cart::content()->all();
-        return dd($cart);
-        //return view('pages.cart',compact('cart'));
+        //return dd($cart);
+        return view('pages.cart',compact('cart'));
     }
 
     /**
@@ -37,13 +37,16 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        foreach (Cart::content() as $single){
+            if ($request->input('slug'))
+        }
         Cart::add($request->input('id'),$request->input('modele'),1,
             $request->input('prix'),['image' => $request->input('image'),'slug' => $request->input('slug') ])
             ->associate('App/Composants');
        // $rowId = Cart::content()->last()->rowId;
       //  Cart::store($rowId);
-        return dd(Cart::content());
-      //  return redirect('/cart');
+        //return dd(Cart::content());
+        return redirect('/cart');
     }
 
     /**
