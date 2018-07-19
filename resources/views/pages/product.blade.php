@@ -72,7 +72,7 @@
                         
 
                         <ul class="pro__dtl__btn">
-                            <form action="/cartStore" method="post">
+                            <form action="/cartCreate" method="post">
                                 {{ csrf_field() }}
                                 <input  type="hidden" name="id" value="{{$composant->id}}">
                                 <input  type="hidden" name="modele" value="{{$composant->modele}}">
@@ -80,7 +80,7 @@
                                 <input  type="hidden" name="image" value="{{$composant->image}}">
                                 <input  type="hidden" name="slug" value="{{$composant->slug}}">
                                 <button type="submit" class="btn btn-success">acheter</button>
-                                <li class="buy__now__btn"><a href="/cartStore">buy now</a></li>
+                                <li class="buy__now__btn"><a href="/cartCreate">buy now</a></li>
                             </form>
                         </ul>
                     </div>

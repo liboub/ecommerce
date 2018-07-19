@@ -13,7 +13,7 @@
 
 
 Route::get('/cart', 'CartController@index');
-Route::post('/cartStore', 'CartController@create')->name('cartStore');
+Route::post('/cartCreate', 'CartController@create')->name('cartCreate');
 Route::get('/cartRemove/{n}', 'CartController@destroy')->name('cartDelete');
 
 

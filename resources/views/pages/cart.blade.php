@@ -51,8 +51,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{dd($cart)}}
-                        {{dd($cart['91702397cc8331629b4057d66eb53f8f']->options['image'])}}
                         <div class="row">
                             <div class="col-md-8 col-sm-7 col-xs-12">
                                 <div class="buttons-cart">
