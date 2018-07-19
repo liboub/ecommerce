@@ -16,7 +16,11 @@
     <!-- Start Header Style -->
     @include('elements.navbar')
     <!-- End Header Style -->
-
+    @if (session('alert'))
+        <div class="alert alert-success">
+            {{ session('alert') }}
+        </div>
+    @endif
     <div class="body__overlay"></div>
     <!-- cart-main-area start -->
     <div class="cart-main-area ptb--120 bg__white">

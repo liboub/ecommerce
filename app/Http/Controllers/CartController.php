@@ -26,17 +26,27 @@ class CartController extends Controller
      */
     public function create(Request $request)
     {
-        foreach (Cart::content() as $single){
-            if ($request->input('slug') == $single->options['slug']){
-
-            }
-            else{
-                Cart::add($request->input('id'),$request->input('modele'),1,
-                    $request->input('prix'),['image' => $request->input('image'),'slug' => $request->input('slug') ])
-                    ->associate('App/Composants');
-                return redirect('/cart');
+        if (Cart::content()->count() > 0 )
+        {
+            foreach (Cart::content() as $single){
+                if ($request->input('slug') == $single->options['slug']){
+                    return redirect()->back()->with('alert', 'vous  avez deja un '.$request->input('slug').'!');
+                }
+                else{
+                    Cart::add($request->input('id'),$request->input('modele'),1,
+                        $request->input('prix'),['image' => $request->input('image'),'slug' => $request->input('slug') ])
+                        ->associate('App/Composants');
+                    return redirect('/cart');
+                }
             }
         }
+        else{
+            Cart::add($request->input('id'),$request->input('modele'),1,
+                $request->input('prix'),['image' => $request->input('image'),'slug' => $request->input('slug') ])
+                ->associate('App/Composants');
+            return redirect('/cart');
+        }
+
 
 
     }
@@ -103,5 +113,20 @@ class CartController extends Controller
     {
         Cart::remove($rowId);
         return redirect('/cart');
+    }
+
+    public function  destroyDoublon(Request $request){
+        foreach (Cart::content() as $single) {
+            if ($request->input('slug') == $single->options['slug']) {
+                Cart::remove($single->rowId);
+
+            }
+        }
+                Cart::add($request->input('id'),$request->input('modele'),1,
+                    $request->input('prix'),['image' => $request->input('image'),'slug' => $request->input('slug') ])
+                    ->associate('App/Composants');
+                return redirect('/cart');
+
+
     }
 }

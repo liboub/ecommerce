@@ -69,8 +69,21 @@
                             <li>{{$composant->prix}} €</li>
                         </ul>
 
-                        
 
+                        @if (session('alert'))
+                            <div class="alert alert-success">
+                                {{ session('alert') }}
+                                <form action="/destroyDoublon" method="post">
+                                    {{ csrf_field() }}
+                                    <input  type="hidden" name="id" value="{{$composant->id}}">
+                                    <input  type="hidden" name="modele" value="{{$composant->modele}}">
+                                    <input  type="hidden" name="prix" value="{{$composant->prix}}">
+                                    <input  type="hidden" name="image" value="{{$composant->image}}">
+                                    <input  type="hidden" name="slug" value="{{$composant->slug}}">
+                                    <button type="submit" class="btn btn-danger">supprimer le {{$composant->slug}} deja present dans le panier , et ajouter ce produit</button>
+                                </form>
+                            </div>
+                        @endif
                         <ul class="pro__dtl__btn">
                             <form action="/cartCreate" method="post">
                                 {{ csrf_field() }}
@@ -79,8 +92,7 @@
                                 <input  type="hidden" name="prix" value="{{$composant->prix}}">
                                 <input  type="hidden" name="image" value="{{$composant->image}}">
                                 <input  type="hidden" name="slug" value="{{$composant->slug}}">
-                                <button type="submit" class="btn btn-success">acheter</button>
-                                <li class="buy__now__btn"><a href="/cartCreate">buy now</a></li>
+                                <button type="submit" class="btn btn-danger">Acheter</button>
                             </form>
                         </ul>
                     </div>
