@@ -3706,7 +3706,7 @@
             },
             "notification-url": "https://larapack.io/downloads",
             "description": "This hook will add support for Voyager front-end themes",
-            "time": "2018-07-12T11:07:55+00:00"
+            "time": "2018-07-03T04:07:05+00:00"
         }
     ],
     "packages-dev": [
