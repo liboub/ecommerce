@@ -24,9 +24,14 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        foreach (Cart::content() as $single){
+            if ($request->input('slug') == $single)
+        }
+        Cart::add($request->input('id'),$request->input('modele'),1,
+            $request->input('prix'),['image' => $request->input('image'),'slug' => $request->input('slug') ])
+            ->associate('App/Composants');
     }
 
     /**
@@ -37,12 +42,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        foreach (Cart::content() as $single){
-            if ($request->input('slug'))
-        }
-        Cart::add($request->input('id'),$request->input('modele'),1,
-            $request->input('prix'),['image' => $request->input('image'),'slug' => $request->input('slug') ])
-            ->associate('App/Composants');
+
        // $rowId = Cart::content()->last()->rowId;
       //  Cart::store($rowId);
         //return dd(Cart::content());
